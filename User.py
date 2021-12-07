@@ -45,7 +45,7 @@ class Credentials():
         __init__ method that helps us define properties for our objects.
 
         Args:
-            account: new_user  account
+            account: new_user  account.
             username: new_user username.
             password: new_user password.
             
@@ -53,5 +53,12 @@ class Credentials():
         self.account=account    
         self.username=username
         self.password=password
+
+
+        def save_details(self):
+            '''
+            method to store new credentials
+            '''
+        Credentials.credentials_list.append(self)
 
         
