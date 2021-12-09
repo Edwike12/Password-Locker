@@ -30,16 +30,7 @@ class TestUser(unittest.TestCase):
                 self.new_user.save_user()
                 self.assertEqual(len(User.User_list),1)
 
-        #def test_save_multiple_contact(self):
-           # '''
-            #test_save_multiple_user to check if we can save multiple user
-            #objects to our User_list
-            #'''
-            #self.new_user.save_user()
-            #test_user = User("Test","user","0712345678","test@user.com") # new contact
-            #test_user.save_contact()
-            #self.assertEqual(len(User.User_list),2) 
-            # 
+                    
 class TestCredentials(unittest.TestCase):
 
         '''
@@ -58,9 +49,39 @@ class TestCredentials(unittest.TestCase):
                 """
                 test_init test case to test if the object is initialized properly
                 """
-                self.assertEqual(self.new_user.account,"Facebook")
-                self.assertEqual(self.new_user.username,"Invioleta")
-                self.assertEqual(self.new_user.password,"Invi@456")
+                self.assertEqual(self.new_credential.account,"Facebook")
+                self.assertEqual(self.new_credential.username,"Invioleta")
+                self.assertEqual(self.new_credential.password,"Invi@456")
+
+        def test_save_credentials_(self):
+                '''
+                test_save_credentials test case to test if the accounts object is saved into
+                the credentials list
+                '''
+                self.new_credentials.save_credentials() # saving the new account
+                self.assertEqual(len(Credentials.credentials_list),1)
+
+
+        def test_delete_credentials_(self):
+                '''
+                test_delete_credentials to test if we can remove a credentials from our credentials list
+                '''
+                self.assertEqual(self.new_credential.account,"Facebook")
+                self.assertEqual(self.new_credential.username,"Invioleta")
+                self.assertEqual(self.new_credential.password,"Invi@456")
+
+        def test_save_multiple_accounts(self):
+                
+                '''
+                test_save_multiple_accounts to check if we can save multiple account
+                objects to our credential list
+                '''
+                self.new_credentials.save_credentials()
+                test_credentials = Credentials("Facebook", "Invioleta", "Invi@456") # new contact
+                test_credentials.save_credentials()
+                self.assertEqual(len(Credentials.credentials_list),2) 
+               
+
        
 
 if __name__ == '__main__':
