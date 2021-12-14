@@ -22,16 +22,21 @@ def  create_new_user(username,password):
 
 def create_new_credentials(account,username,password):
     '''
-    a function to create new credentials with account,username and password
+    a function that creates a new credentials with account,username and password
     '''
     new_credentials=Credentials(account,username,password)
     return new_credentials
 
-def save_credentials(Credentials):
-    '''
-    its a function to save credentials
-    '''
-    Credentials.save_credentials() 
+    def save_credentials(Credentials):
+        '''
+        its a function to save credentials
+        '''
+        Credentials.save_credentials() 
 
+    def display_accounts_credentials():
+        """
+        Function that shows all the saved credentials.
+        """
+        return Credentials.display_credentials()
 
      
