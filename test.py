@@ -66,9 +66,12 @@ class TestCredentials(unittest.TestCase):
                 '''
                 test_delete_credentials to test if we can remove a credentials from our credentials list
                 '''
-                self.assertEqual(self.new_credential.account,"Facebook")
-                self.assertEqual(self.new_credential.username,"Invioleta")
-                self.assertEqual(self.new_credential.password,"Invi@456")
+                self.new_credential.save_credentials()
+                test_credential = Credentials("Facebook","Invioleta","Invi@456")
+                test_credential.save_credentialsls()
+
+                self.new_credential.delete_credentials()
+                self.assertEqual(len(Credentials.credentials_list),1)
 
         def tearDown(self):
                 '''
@@ -85,7 +88,22 @@ class TestCredentials(unittest.TestCase):
                 self.new_credentials.save_credentials()
                 test_credentials = Credentials("Facebook", "Invioleta", "Invi@456") # new contact
                 test_credentials.save_credentials()
-                self.assertEqual(len(Credentials.credentials_list),2) 
+                self.assertEqual(len(Credentials.credentials_list),2)
+
+        def test_credentials_exist(self):
+                '''
+                test_credentials_exist is a test to check if the credentials exist to return a true or false
+                '''
+                self.new_credential.save_credentials()
+                test_credential = Credentials("Facebook","Invioleta","Invi@456")
+                test_credential.save_credentialsls()
+
+                credentials_is_found = Credentials.check_credentials_exist("Facebook")
+                self.assertTrue(credentials_is_found)
+
+
+
+
                
 
        

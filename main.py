@@ -45,4 +45,10 @@ def create_new_credentials(account,username,password):
         '''
         Credentials.delete_credentials() 
 
+        def check_credentials(Credentials):
+            '''
+            its a function that check if a credentials exists with that account name and return true or false
+            '''
+            return Credentials.check_credentials_exist(account)
+
      
