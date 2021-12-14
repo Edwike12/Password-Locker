@@ -55,7 +55,7 @@ class Credentials():
         self.password=password
 
 
-        def save_details(self):
+        def save_credentials(self):
             '''
             method to store new credentials
             '''
@@ -66,5 +66,18 @@ class Credentials():
             method that deletes an account credentials from the credentials list
             '''
         Credentials.credentials_list.append(self)
+
+        def search_credentials_(cls,account):
+            '''
+            method that searches an account and returns the credentials that matches that is the password and username
+            '''
+            for credential in cls.credentials_list:
+                if credential.account == account:
+                    return credential
+
+                    
+        
+
+        
 
         
