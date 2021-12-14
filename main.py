@@ -39,4 +39,10 @@ def create_new_credentials(account,username,password):
         """
         return Credentials.display_credentials()
 
+    def delete_credentials(Credentials):
+        '''
+        its a function to delete credentials
+        '''
+        Credentials.delete_credentials() 
+
      
