@@ -70,3 +70,7 @@ def passwordlocker():
                 break
             else:
                 print("Invalid password please try again")
+        save_user:(create_new_user(username,password))
+        print("*"*85)
+        print(f"Hello {username}, Your account has been created succesfully! Your password is: {password}")
+        print("*"*85)
