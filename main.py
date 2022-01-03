@@ -51,4 +51,22 @@ def create_new_credentials(account,username,password):
             '''
             return Credentials.check_credentials_exist(account)
 
-     
+'''
+creating an opening display page
+'''
+
+def passwordlocker():
+    print("Hello, welcome to passwordlocker", "To proceed enter:","create new account 'CA'","log in account 'lG'","Exit",sep="\n\n")
+    short_code=input("").lower().strip()
+    if short_code=="CA":
+        print("Sign Up")
+        print('*' *20)
+        username=input("User_name: ")
+        while True:
+            print(" TP - To type your own pasword: ")
+            password_Choice = input().lower().strip()
+            if password_Choice == 'TP':
+                password = input("Enter Password\n")
+                break
+            else:
+                print("Invalid password please try again")

@@ -66,7 +66,7 @@ class TestCredentials(unittest.TestCase):
                 '''
                 test_delete_credentials to test if we can remove a credentials from our credentials list
                 '''
-                self.new_credential.save_credentials()
+                #self.new_credential.save_credentials()
                 test_credential = Credentials("Facebook","Invioleta","Invi@456")
                 test_credential.save_credentialsls()
 
@@ -85,7 +85,7 @@ class TestCredentials(unittest.TestCase):
                 test_save_multiple_accounts to check if we can save multiple account
                 objects to our credential list
                 '''
-                self.new_credentials.save_credentials()
+                #self.new_credentials.save_credentials()
                 test_credentials = Credentials("Facebook", "Invioleta", "Invi@456") # new contact
                 test_credentials.save_credentials()
                 self.assertEqual(len(Credentials.credentials_list),2)
@@ -94,12 +94,19 @@ class TestCredentials(unittest.TestCase):
                 '''
                 test_credentials_exist is a test to check if the credentials exist to return a true or false
                 '''
-                self.new_credential.save_credentials()
+                #self.new_credential.save_credentials()
                 test_credential = Credentials("Facebook","Invioleta","Invi@456")
                 test_credential.save_credentialsls()
 
                 credentials_is_found = Credentials.check_credentials_exist("Facebook")
                 self.assertTrue(credentials_is_found)
+
+        def test_display_all_saved_credentials(self):
+                '''
+                method that displays all the credentials that has been saved by the user
+                '''
+
+                self.assertEqual(Credentials.display_accounts_credentials(),Credentials.credentials_list)       
 
 
 
